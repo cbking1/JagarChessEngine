@@ -3,3 +3,9 @@
 x64/
 [Bb]in/
 [Oo]bj/
+**/packages/*
+**/.vs
+*.nupkg
+*.suo
+*.user
+*.sln.docstates
