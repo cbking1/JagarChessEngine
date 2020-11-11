@@ -3,7 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JagarChessEngine", "JagarChessEngine\JagarChessEngine.csproj", "{B09E0FC5-3F0F-45E9-8B7A-7721CFF96A1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts", "Contracts\Contracts.csproj", "{770CB4A4-E018-416C-B734-24692313A6DE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandParsing", "CommandParsing\CommandParsing.csproj", "{3C9256AD-68A3-44D4-A18A-815BC0CAAC0E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Parser", "Parser", "{CB941083-232C-48E3-A77B-FA4C0A4604FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commands", "Commands\Commands.csproj", "{175E0741-CAB7-4E0C-9381-C5C20CC1320D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JagarEngine", "JagarEngine\JagarEngine.csproj", "{5AB63BFD-8215-4FB8-B6BF-756B18DA0A04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Engine", "Engine\Engine.csproj", "{10ACB6B3-3335-484E-BAD0-DCEBA9D876DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleWritingService", "ConsoleWritingService\ConsoleWritingService.csproj", "{97965AB3-D523-4A48-8E0B-0E9CF707592C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +23,37 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B09E0FC5-3F0F-45E9-8B7A-7721CFF96A1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B09E0FC5-3F0F-45E9-8B7A-7721CFF96A1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B09E0FC5-3F0F-45E9-8B7A-7721CFF96A1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B09E0FC5-3F0F-45E9-8B7A-7721CFF96A1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{770CB4A4-E018-416C-B734-24692313A6DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{770CB4A4-E018-416C-B734-24692313A6DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{770CB4A4-E018-416C-B734-24692313A6DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{770CB4A4-E018-416C-B734-24692313A6DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C9256AD-68A3-44D4-A18A-815BC0CAAC0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C9256AD-68A3-44D4-A18A-815BC0CAAC0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C9256AD-68A3-44D4-A18A-815BC0CAAC0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C9256AD-68A3-44D4-A18A-815BC0CAAC0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{175E0741-CAB7-4E0C-9381-C5C20CC1320D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{175E0741-CAB7-4E0C-9381-C5C20CC1320D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{175E0741-CAB7-4E0C-9381-C5C20CC1320D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{175E0741-CAB7-4E0C-9381-C5C20CC1320D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AB63BFD-8215-4FB8-B6BF-756B18DA0A04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AB63BFD-8215-4FB8-B6BF-756B18DA0A04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AB63BFD-8215-4FB8-B6BF-756B18DA0A04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AB63BFD-8215-4FB8-B6BF-756B18DA0A04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10ACB6B3-3335-484E-BAD0-DCEBA9D876DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10ACB6B3-3335-484E-BAD0-DCEBA9D876DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10ACB6B3-3335-484E-BAD0-DCEBA9D876DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10ACB6B3-3335-484E-BAD0-DCEBA9D876DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97965AB3-D523-4A48-8E0B-0E9CF707592C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97965AB3-D523-4A48-8E0B-0E9CF707592C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97965AB3-D523-4A48-8E0B-0E9CF707592C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97965AB3-D523-4A48-8E0B-0E9CF707592C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3C9256AD-68A3-44D4-A18A-815BC0CAAC0E} = {CB941083-232C-48E3-A77B-FA4C0A4604FC}
+		{175E0741-CAB7-4E0C-9381-C5C20CC1320D} = {CB941083-232C-48E3-A77B-FA4C0A4604FC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1F7A681E-5D4E-4F0E-8A3D-255044013A69}
