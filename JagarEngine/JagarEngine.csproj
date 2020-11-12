@@ -12,7 +12,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CommandParsing\CommandParsing.csproj" />
     <ProjectReference Include="..\ConsoleWritingService\ConsoleWritingService.csproj" />
-    <ProjectReference Include="..\Contracts\Contracts.csproj" />
+    <ProjectReference Include="..\Contracts\JagarEngineContracts.csproj" />
   </ItemGroup>
 
 </Project>

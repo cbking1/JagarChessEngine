@@ -1,4 +1,4 @@
-﻿using JagarEngineContracts;
+﻿using Contracts;
 using System.Runtime.CompilerServices;
 
 namespace CommandFactory

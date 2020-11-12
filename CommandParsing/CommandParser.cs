@@ -2,7 +2,7 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
-using Contracts;
+using JagarEngineContracts;
 using Commands;
 
 namespace CommandParsing
@@ -36,11 +36,18 @@ namespace CommandParsing
                 {
                     case "uci":
                         return new UciInputCommand();
+                    case "debug":
+                        return new DebugCommand(parameters.Skip(1));
                     case "isready":
                         return new IsReadyCommand();
                     case "register":
                         return new RegisterCommand();
+                    case "ucinewgame":
+                        return new UciNewGameCommand();
+                    case "position":
+                        return new PositionCommand(parameters.Skip(1));
                 }
+                parameters.RemoveAt(0);
             }
             return new NullInputCommand();
         }

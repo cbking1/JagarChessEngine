@@ -1,4 +1,4 @@
-﻿namespace JagarEngineContracts
+﻿namespace Contracts
 {
     public interface IOutputWriter
     {

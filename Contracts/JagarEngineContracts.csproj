@@ -6,8 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Commands\Commands.csproj" />
-    <ProjectReference Include="..\Contracts\JagarEngineContracts.csproj" />
+    <ProjectReference Include="..\ChessEngineContracts\ChessEngineContracts.csproj" />
   </ItemGroup>
 
 </Project>

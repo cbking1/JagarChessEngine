@@ -1,6 +1,6 @@
 ﻿using System.Collections.Concurrent;
 
-namespace JagarEngineContracts
+namespace Contracts
 {
     public interface ICommandParser
     {

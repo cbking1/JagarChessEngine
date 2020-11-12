@@ -1,9 +1,8 @@
-﻿using ChessEngineContracts;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace JagarEngineContracts
+namespace Contracts
 {
     public interface IEngine
     {
