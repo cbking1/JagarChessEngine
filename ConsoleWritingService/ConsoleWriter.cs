@@ -1,5 +1,5 @@
-﻿using System;
-using Contracts;
+﻿using JagarEngineContracts;
+using System;
 
 namespace ConsoleWritingService
 {

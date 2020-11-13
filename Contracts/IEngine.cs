@@ -16,5 +16,7 @@ namespace JagarEngineContracts
         void Play(IMove move);
 
         IMove MakeBestMove();
+        void SetStartPosition();
+        void SetPosition(string fen);
     }
 }
