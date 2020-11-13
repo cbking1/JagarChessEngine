@@ -60,34 +60,64 @@ namespace CommandParsing
                         return new UciNewGameCommand();
                     case "position":
                         parameters.RemoveAt(0);
-                        string fen;
-                        IEnumerable<IMove> moves;
-                        ParsePositionArguments(parameters, out fen, out moves);
-
-                        return new PositionCommand(fen, moves);
+                        var arguments = ParsePositionArguments(parameters);
+                        return new PositionCommand(arguments.Item1, arguments.Item2);
+                    case "go":
+                        parameters.RemoveAt(0);
+                        IGoArguments goArguments = ParseGoArguments(parameters);
                 }
                 parameters.RemoveAt(0);
             }
             return new NullInputCommand();
         }
 
-        private void ParsePositionArguments(List<string> parameters, out string fen, out IEnumerable<IMove> moves)
+        private IGoArguments ParseGoArguments(List<string> parameters)
         {
-            switch (parameters.First())
+            IGoArguments goArguments = new GoArguments();
+            while (parameters.Any())
             {
-                case "fen":
-                    parameters.RemoveAt(0);
-                    fen = parameters.First();
-                    parameters.RemoveAt(0);
-                    break;
-                case "startpos":
-                    parameters.RemoveAt(0);
-                    fen = "";
-                    break;
-                default:
-                    throw new ArgumentException("Cannot parse arguments for position command. Expected syntax is position [fen <fenstring> | startpos ]  moves <move1> .... <movei>");
+                switch (parameters.First())
+                {
+                    case "searchmoves":
+                        parameters.RemoveAt(0);
+                        while (parameters.Any())
+                        {
+                            if (_moveParser.IsMove(parameters.First()))
+                            {
+                                goArguments.SearchMoves.Add(_moveParser.LastParsedMove);
+                            }
+
+                        }
+                }
             }
-            moves = _moveParser.ParseMoves(parameters);
+        }
+
+        private Tuple<string, IEnumerable<IMove>> ParsePositionArguments(List<string> parameters)
+        {
+            string fen;
+            try
+            {
+                switch (parameters.First())
+                {
+                    case "fen":
+                        parameters.RemoveAt(0);
+                        fen = parameters.First();
+                        parameters.RemoveAt(0);
+                        break;
+                    case "startpos":
+                        parameters.RemoveAt(0);
+                        fen = "";
+                        break;
+                    default:
+                        throw new ArgumentException("Cannot parse arguments for position command. Expected syntax is position [fen <fenstring> | startpos ]  moves <move1> .... <movei>");
+                }
+            }
+            catch (InvalidOperationException ex)
+            {
+                throw new ArgumentException("Cannot parse arguments for position command. Expected syntax is position [fen <fenstring> | startpos ]  moves <move1> .... <movei>", ex);
+            }
+            IEnumerable<IMove> moves = _moveParser.ParseMoves(parameters);
+            return new Tuple<string, IEnumerable<IMove>>(fen, moves);
         }
 
         private bool ParseDebugOn(List<string> parameters)
